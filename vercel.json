@@ -1,0 +1,13 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "rewrites": [
+      {
+        "source": "/demo/point-of-sale-resto",
+        "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto"
+      },
+      {
+        "source": "/demo/point-of-sale-resto/:match*",
+        "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto/:match*"
+      }
+    ]
+  }
