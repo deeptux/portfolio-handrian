@@ -11,11 +11,11 @@
       },
       {
         "source": "/demo/fms",
-        "destination": "https://YOUR-FMS-APP.vercel.app/demo/fms"
+        "destination": "https://webapp-fms.vercel.app/demo/fms"
       },
       {
         "source": "/demo/fms/:match*",
-        "destination": "https://YOUR-FMS-APP.vercel.app/demo/fms/:match*"
+        "destination": "https://webapp-fms.vercel.app/demo/fms/:match*"
       }
     ]
   }
