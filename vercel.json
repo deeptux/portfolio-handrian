@@ -8,6 +8,14 @@
       {
         "source": "/demo/point-of-sale-resto/:match*",
         "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto/:match*"
+      },
+      {
+        "source": "/demo/fms",
+        "destination": "https://YOUR-FMS-APP.vercel.app/demo/fms"
+      },
+      {
+        "source": "/demo/fms/:match*",
+        "destination": "https://YOUR-FMS-APP.vercel.app/demo/fms/:match*"
       }
     ]
   }
