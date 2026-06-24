@@ -19,11 +19,11 @@
       },
       {
         "source": "/demo/phmc-privilege-admin",
-        "destination": "https://phmc-privilege-admin.vercel.app/demo/phmc-privilege-admin"
+        "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin"
       },
       {
         "source": "/demo/phmc-privilege-admin/:match*",
-        "destination": "https://phmc-privilege-admin.vercel.app/demo/phmc-privilege-admin/:match*"
+        "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin/:match*"
       }
     ]
   }
