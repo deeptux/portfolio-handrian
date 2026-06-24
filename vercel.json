@@ -16,6 +16,14 @@
       {
         "source": "/demo/fms/:match*",
         "destination": "https://webapp-fms.vercel.app/demo/fms/:match*"
+      },
+      {
+        "source": "/demo/phmc-privilege-admin",
+        "destination": "https://phmc-privilege-admin.vercel.app/demo/phmc-privilege-admin"
+      },
+      {
+        "source": "/demo/phmc-privilege-admin/:match*",
+        "destination": "https://phmc-privilege-admin.vercel.app/demo/phmc-privilege-admin/:match*"
       }
     ]
   }
