@@ -51,11 +51,11 @@
       },
       {
         "source": "/demo/financial-reporting",
-        "destination": "https://popic-projection-app-poc.vercel.app"
+        "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting"
       },
       {
         "source": "/demo/financial-reporting/:match*",
-        "destination": "https://popic-projection-app-poc.vercel.app/:match*"
+        "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting/:match*"
       },
       {
         "source": "/demo/messaging",
