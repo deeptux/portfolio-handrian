@@ -43,11 +43,15 @@
       },
       {
         "source": "/demo/hris",
-        "destination": "https://deeptux.github.io/apptest-hris"
+        "destination": "https://deeptux.github.io/apptest-hris/"
       },
       {
-        "source": "/demo/hris/:match*",
-        "destination": "https://deeptux.github.io/apptest-hris/:match*"
+        "source": "/demo/hris/",
+        "destination": "https://deeptux.github.io/apptest-hris/"
+      },
+      {
+        "source": "/demo/hris/:path*",
+        "destination": "https://deeptux.github.io/apptest-hris/:path*"
       },
       {
         "source": "/demo/financial-reporting",
