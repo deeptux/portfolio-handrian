@@ -63,11 +63,15 @@
       },
       {
         "source": "/demo/messaging",
-        "destination": "https://apptest-messaging-dev.web.app"
+        "destination": "https://apptest-messaging-dev.web.app/demo/messaging"
       },
       {
-        "source": "/demo/messaging/:match*",
-        "destination": "https://apptest-messaging-dev.web.app/:match*"
+        "source": "/demo/messaging/",
+        "destination": "https://apptest-messaging-dev.web.app/demo/messaging/"
+      },
+      {
+        "source": "/demo/messaging/:path*",
+        "destination": "https://apptest-messaging-dev.web.app/demo/messaging/:path*"
       }
     ]
   }
