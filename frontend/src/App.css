@@ -1,0 +1,8 @@
+/* App-level CSS reserved for page-scoped styles. Global styles live in index.css. */
+.App {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #030308;
+}

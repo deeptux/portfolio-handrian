@@ -1,0 +1,236 @@
+// Live demo catalogue for handrian.space — paths match vercel.json rewrites.
+// Used by TerminalDeck screen preview, projects panel, and detail panel.
+
+export const PROJECTS = [
+  {
+    id: 'point-of-sale-resto',
+    title: 'POINT OF SALE RESTO',
+    tagline: 'E-commerce / POS restaurant demo',
+    year: '2023',
+    role: 'Full-Stack Engineer',
+    tags: ['Next.js', 'POS', 'E-commerce'],
+    accent: '#00f0ff',
+    color: 'cyan',
+    description:
+      'Restaurant point-of-sale (PoS) & online ordering demo, having store admin, cart, and kitchen-facing flows under a shared demo unlock gate.',
+    highlights: [
+      'Demo login gate with store administration shell',
+      'Catalog, cart, and order operations',
+      'Proxied at /demo/point-of-sale-resto',
+    ],
+    url: '/demo/point-of-sale-resto/login',
+    screen: [
+      '> boot://pos-resto/login',
+      '> mounting store shell .............. [ok]',
+      '> catalog sync ..................... [ok]',
+      '> cart + admin routes .............. READY',
+      '> path ............................. /demo/point-of-sale-resto',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'fms',
+    title: 'FMS',
+    tagline: 'Fleet / field management system demo',
+    year: '2024',
+    role: 'Product Engineer',
+    tags: ['Web App', 'Operations', 'Dashboard'],
+    accent: '#ff0055',
+    color: 'magenta',
+    description:
+      'Operations-facing FMS demo for tracking and coordinating field activity through a web dashboard.',
+    highlights: [
+      'Operational dashboard entry',
+      'Demo environment for stakeholder walkthroughs',
+      'Proxied at /demo/fms',
+    ],
+    url: '/demo/fms',
+    screen: [
+      '> boot://fms/console',
+      '> loading ops modules .............. [ok]',
+      '> telemetry uplink ................. STABLE',
+      '> path ............................. /demo/fms',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'phmc-privilege-admin',
+    title: 'PHMC PRIVILEGE ADMIN',
+    tagline: 'Loyalty / privilege admin prototype',
+    year: '2024',
+    role: 'Frontend Engineer',
+    tags: ['Admin', 'Loyalty', 'Prototype'],
+    accent: '#8D00FF',
+    color: 'violet',
+    description:
+      'Privilege and loyalty admin demo for managing member programs, offers, and back-office workflows.',
+    highlights: [
+      'Admin login and privilege management surfaces',
+      'Prototype for stakeholder demos',
+      'Proxied at /demo/phmc-privilege-admin',
+    ],
+    url: '/demo/phmc-privilege-admin/login',
+    screen: [
+      '> boot://phmc/privilege-admin',
+      '> auth gate ........................ READY',
+      '> privilege modules ................ [ok]',
+      '> path ............................. /demo/phmc-privilege-admin',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'production-order-planner',
+    title: 'PRODUCTION ORDER PLANNER',
+    tagline: 'Production / manufacturing planning',
+    year: '2025',
+    role: 'Full-Stack Engineer',
+    tags: ['Planning', 'Gantt', 'Manufacturing'],
+    accent: '#00f0ff',
+    color: 'cyan',
+    description:
+      'Production order planner with line profiles, batch scheduling, and output-by-product views for manufacturing walkthroughs.',
+    highlights: [
+      'Line / batch Gantt-style planning',
+      'Output and capacity summaries',
+      'Proxied at /demo/production-order-planner',
+    ],
+    url: '/demo/production-order-planner',
+    screen: [
+      '> boot://production-order-planner',
+      '> loading line profiles ............ [ok]',
+      '> gantt + batch grid ............... READY',
+      '> path ............................. /demo/production-order-planner',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'b2b-ecommerce',
+    title: 'B2B E-COMMERCE',
+    tagline: 'Dealer / admin commerce analytics',
+    year: '2025',
+    role: 'Full-Stack Engineer',
+    tags: ['B2B', 'E-commerce', 'Analytics'],
+    accent: '#E5FF00',
+    color: 'yellow',
+    description:
+      'B2B e-commerce demo with seeded admin and dealer roles for ordering and commerce analytics walkthroughs.',
+    highlights: [
+      'Pre-seeded Admin and Dealer sign-in',
+      'Commerce / dealer flows',
+      'Proxied at /demo/b2b-ecommerce',
+    ],
+    url: '/demo/b2b-ecommerce',
+    screen: [
+      '> boot://b2b-ecommerce/sign-in',
+      '> roles: admin | dealer ............ READY',
+      '> catalog + analytics .............. [ok]',
+      '> path ............................. /demo/b2b-ecommerce',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'hris',
+    title: 'RSP-FOCUSED HRIS',
+    tagline: 'Human resources info system demo',
+    year: '2024',
+    role: 'Full-Stack Engineer',
+    tags: ['HRIS', 'HR', 'Web App'],
+    accent: '#ff0055',
+    color: 'magenta',
+    description:
+      'RSP-focused human resources information system demo covering core HR workflows in a lightweight web shell.',
+    highlights: [
+      'HRIS demo entry for stakeholder review',
+      'Core people-ops surfaces',
+      'Proxied at /demo/hris',
+    ],
+    url: '/demo/hris',
+    screen: [
+      '> boot://hris/rsp',
+      '> mounting hr modules .............. [ok]',
+      '> people-ops routes ................ READY',
+      '> path ............................. /demo/hris',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'financial-reporting',
+    title: 'FINANCIAL REPORTING',
+    tagline: 'Finance technology / projection PoC',
+    year: '2025',
+    role: 'Frontend Engineer',
+    tags: ['Finance', 'Dashboard', 'Reporting'],
+    accent: '#8D00FF',
+    color: 'violet',
+    description:
+      'Financial reporting & projection dashboard PoC. An income statement views & KPI comparisons for finance walkthroughs.',
+    highlights: [
+      'Dashboard with statement / KPI panels',
+      'Projection-oriented PoC flows',
+      'Proxied at /demo/financial-reporting',
+    ],
+    url: '/demo/financial-reporting/dashboard',
+    screen: [
+      '> boot://financial-reporting/dashboard',
+      '> loading statements ............... [ok]',
+      '> KPI panels ....................... READY',
+      '> path ............................. /demo/financial-reporting',
+      '> status ........................... LIVE',
+    ],
+  },
+  {
+    id: 'messaging',
+    title: 'MESSAGING APP',
+    tagline: 'Communications solutions demo',
+    year: '2024',
+    role: 'Full-Stack Engineer',
+    tags: ['Messaging', 'Realtime', 'Comms'],
+    accent: '#00f0ff',
+    color: 'cyan',
+    description:
+      'Messaging application demo for realtime communications walkthroughs and product prototyping.',
+    highlights: [
+      'Realtime messaging shell',
+      'Communications demo environment',
+      'Proxied at /demo/messaging',
+    ],
+    url: '/demo/messaging',
+    screen: [
+      '> boot://messaging/client',
+      '> channel uplink ................... STABLE',
+      '> inbox / threads .................. READY',
+      '> path ............................. /demo/messaging',
+      '> status ........................... LIVE',
+    ],
+  },
+];
+
+export const IDLE_SCREEN = [
+  '> handrian.space // terminal.deck',
+  '> awaiting input ....................... IDLE',
+  '> uplink ............................... STABLE',
+  '> select a demo from the list',
+  '> or press [A] for /about',
+];
+
+export const ABOUT_CONTENT = {
+  greeting: "Hey!!! I'm Handrian.",
+  role: 'Full-Stack Engineer · Creative Technologist',
+  bio: [
+    'I build production web apps & immersive interfaces, demos for POS, operations, HR, finance, and messaging live under handrian.space/demo.',
+    'Available for select engagements. Reach out if you want a walkthrough of any of the live demos.',
+  ],
+  stats: [
+    { label: 'live demos', value: String(PROJECTS.length) },
+    { label: 'domains shipped', value: 'POS · FMS · HR · Fin' },
+    { label: 'stack focus', value: 'Next · React · 3D' },
+    { label: 'uptime mindset', value: 'ship + polish' },
+  ],
+  contact: 'hello@handrian.space',
+  socials: [
+    { label: 'GitHub', href: 'https://github.com/handrian', id: 'gh' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/handrian', id: 'li' },
+    { label: 'X / Twitter', href: 'https://twitter.com/handrian', id: 'tw' },
+    { label: 'Resume', href: '#resume', id: 'cv' },
+  ],
+};
