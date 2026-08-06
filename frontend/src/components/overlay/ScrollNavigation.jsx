@@ -1,10 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { useSceneState, SCENE_STATES } from '@/hooks/useSceneState';
 
-// Scroll-driven navigation. Wheel events outside panel lists cycle through:
+// Scroll-driven navigation. Wheel outside [data-scrollable] lists cycles:
 //   HOME → PROJECTS_LIST → ABOUT_STAGE → HOME
-// When the cursor is over a [data-scrollable="true"] list, wheel/touch only
-// scrolls that list — never changes section (including at top/bottom edges).
+// Wheel over a scrollable list only moves that list — never changes section.
 
 const CYCLE = [
   SCENE_STATES.HOME,
@@ -12,17 +11,39 @@ const CYCLE = [
   SCENE_STATES.ABOUT_STAGE,
 ];
 
-function elementUnderPointer(clientX, clientY, fallbackTarget) {
-  if (typeof document !== 'undefined' && Number.isFinite(clientX) && Number.isFinite(clientY)) {
-    const el = document.elementFromPoint(clientX, clientY);
-    if (el) return el;
+function findScrollableFromEvent(e) {
+  if (typeof e.composedPath === 'function') {
+    const hit = e.composedPath().find(
+      (n) => n instanceof Element && n.getAttribute('data-scrollable') === 'true'
+    );
+    if (hit) return hit;
   }
-  return fallbackTarget;
+
+  const fromTarget =
+    e.target instanceof Element
+      ? e.target.closest('[data-scrollable="true"]')
+      : null;
+  if (fromTarget) return fromTarget;
+
+  if (
+    typeof document !== 'undefined' &&
+    Number.isFinite(e.clientX) &&
+    Number.isFinite(e.clientY)
+  ) {
+    const under = document.elementFromPoint(e.clientX, e.clientY);
+    if (under?.closest) {
+      return under.closest('[data-scrollable="true"]');
+    }
+  }
+
+  return null;
 }
 
-function isInsideScrollableList(el) {
-  if (!el || !el.closest) return false;
-  return Boolean(el.closest('[data-scrollable="true"]'));
+function scrollList(container, deltaY) {
+  if (!container) return;
+  const max = container.scrollHeight - container.clientHeight;
+  if (max <= 0) return;
+  container.scrollTop = Math.min(max, Math.max(0, container.scrollTop + deltaY));
 }
 
 export default function ScrollNavigation() {
@@ -59,14 +80,18 @@ export default function ScrollNavigation() {
     };
 
     const onWheel = (e) => {
-      const under = elementUnderPointer(e.clientX, e.clientY, e.target);
-      // Cursor over projects/about scrollable list → list scroll only.
-      if (isInsideScrollableList(under)) return;
-      // Cursor outside the list (panel chrome, canvas, etc.) → section cycle.
+      const scrollable = findScrollableFromEvent(e);
+      if (scrollable) {
+        // Stay on this section; drive the list ourselves so nested scroll
+        // still works even if another library called preventDefault.
+        scrollList(scrollable, e.deltaY);
+        return;
+      }
       advance(e.deltaY);
     };
 
-    window.addEventListener('wheel', onWheel, { passive: true });
+    // Capture so we decide before other window-level wheel handlers.
+    window.addEventListener('wheel', onWheel, { passive: true, capture: true });
 
     let touchStartY = 0;
     const onTouchStart = (e) => {
@@ -74,21 +99,33 @@ export default function ScrollNavigation() {
     };
     const onTouchMove = (e) => {
       const t = e.touches?.[0];
-      const under = elementUnderPointer(t?.clientX, t?.clientY, e.target);
-      if (isInsideScrollableList(under)) return;
+      const fakeEvent = {
+        composedPath: e.composedPath?.bind(e),
+        target: e.target,
+        clientX: t?.clientX,
+        clientY: t?.clientY,
+      };
+      const scrollable = findScrollableFromEvent(fakeEvent);
       const currentY = t?.clientY ?? 0;
       const dy = touchStartY - currentY;
+      if (scrollable) {
+        if (Math.abs(dy) >= 2) {
+          scrollList(scrollable, dy);
+          touchStartY = currentY;
+        }
+        return;
+      }
       if (Math.abs(dy) < 60) return;
       advance(dy);
       touchStartY = currentY;
     };
-    window.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('touchstart', onTouchStart, { passive: true, capture: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: true, capture: true });
 
     return () => {
-      window.removeEventListener('wheel', onWheel);
-      window.removeEventListener('touchstart', onTouchStart);
-      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('wheel', onWheel, { capture: true });
+      window.removeEventListener('touchstart', onTouchStart, { capture: true });
+      window.removeEventListener('touchmove', onTouchMove, { capture: true });
     };
   }, [goHome, goProjects, goAbout]);
 
