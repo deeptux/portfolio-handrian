@@ -1,10 +1,6 @@
 // Test IDs for the Handrian Portfolio landing experience.
 // Names follow camelCase keys with kebab-case values (feature-element).
 
-export const HOME = {
-        emergentLink: 'home-emergent-link',
-};
-
 export const NAV = {
         root: 'nav-header',
         brand: 'nav-brand',

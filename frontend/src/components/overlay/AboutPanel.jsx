@@ -45,6 +45,7 @@ export default function AboutPanel() {
     <aside
       ref={rootRef}
       data-testid={ABOUT_PANEL.root}
+      data-scroll-trap="true"
       className="fixed z-40 pointer-events-auto left-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[540px] lg:w-[42vw]"
       aria-label="About Handrian"
       aria-hidden={!isOpen}
