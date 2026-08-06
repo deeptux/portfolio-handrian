@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useSceneState, SCENE_STATES } from '@/hooks/useSceneState';
 
-// Scroll-driven navigation. Wheel events on the background cycle through:
+// Scroll-driven navigation. Wheel events outside panel lists cycle through:
 //   HOME → PROJECTS_LIST → ABOUT_STAGE → HOME
-// Wheel/touch inside a panel marked data-scroll-trap (or a data-scrollable
-// list) never changes section — it only scrolls that panel's content.
+// When the cursor is over a [data-scrollable="true"] list, wheel/touch only
+// scrolls that list — never changes section (including at top/bottom edges).
 
 const CYCLE = [
   SCENE_STATES.HOME,
@@ -12,12 +12,17 @@ const CYCLE = [
   SCENE_STATES.ABOUT_STAGE,
 ];
 
-function isInsidePanelScroll(target) {
-  if (!target || !target.closest) return false;
-  return Boolean(
-    target.closest('[data-scroll-trap="true"]') ||
-      target.closest('[data-scrollable="true"]')
-  );
+function elementUnderPointer(clientX, clientY, fallbackTarget) {
+  if (typeof document !== 'undefined' && Number.isFinite(clientX) && Number.isFinite(clientY)) {
+    const el = document.elementFromPoint(clientX, clientY);
+    if (el) return el;
+  }
+  return fallbackTarget;
+}
+
+function isInsideScrollableList(el) {
+  if (!el || !el.closest) return false;
+  return Boolean(el.closest('[data-scrollable="true"]'));
 }
 
 export default function ScrollNavigation() {
@@ -54,8 +59,10 @@ export default function ScrollNavigation() {
     };
 
     const onWheel = (e) => {
-      // Hovering projects/about panel content: scroll the list only.
-      if (isInsidePanelScroll(e.target)) return;
+      const under = elementUnderPointer(e.clientX, e.clientY, e.target);
+      // Cursor over projects/about scrollable list → list scroll only.
+      if (isInsideScrollableList(under)) return;
+      // Cursor outside the list (panel chrome, canvas, etc.) → section cycle.
       advance(e.deltaY);
     };
 
@@ -66,8 +73,10 @@ export default function ScrollNavigation() {
       touchStartY = e.touches?.[0]?.clientY ?? 0;
     };
     const onTouchMove = (e) => {
-      if (isInsidePanelScroll(e.target)) return;
-      const currentY = e.touches?.[0]?.clientY ?? 0;
+      const t = e.touches?.[0];
+      const under = elementUnderPointer(t?.clientX, t?.clientY, e.target);
+      if (isInsideScrollableList(under)) return;
+      const currentY = t?.clientY ?? 0;
       const dy = touchStartY - currentY;
       if (Math.abs(dy) < 60) return;
       advance(dy);

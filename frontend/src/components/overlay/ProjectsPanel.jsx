@@ -52,7 +52,6 @@ export default function ProjectsPanel() {
     <aside
       ref={rootRef}
       data-testid={PROJECTS_PANEL.root}
-      data-scroll-trap="true"
       className="fixed z-40 pointer-events-auto right-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[520px] lg:w-[38vw]"
       aria-label="Selected projects"
       aria-hidden={!isOpen}

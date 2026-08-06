@@ -3,6 +3,33 @@
 
 export const PROJECTS = [
   {
+    id: 'finsight-ai',
+    title: 'FINSIGHT-AI',
+    tagline: 'Financial PDF agentic RAG with citations',
+    year: '2026',
+    role: 'Solo Build',
+    tags: ['Streamlit', 'LangGraph', 'Gemini', 'RAG'],
+    accent: '#E5FF00',
+    color: 'yellow',
+    description:
+      'Agentic RAG over up to four 10-K style PDFs: LangGraph tools, Chroma retrieval, strict inline citations, sidebar PDF viewer with page jump and text highlight on cite.',
+    highlights: [
+      'Gemini flash-lite + embeddings on free tier',
+      'Background multi-PDF indexing with live status',
+      'Citation 🔍 opens PDF viewer with highlighted spans',
+      'Live on Streamlit Community Cloud',
+    ],
+    url: 'https://finsight-aigit-nrpj8vbrx44g9s6fofv6sv.streamlit.app/',
+    screen: [
+      '> boot://finsight-ai/rag.session',
+      '> chroma index ....................... [ok]',
+      '> langgraph tools .................... search | calc',
+      '> citations .......................... STRICT',
+      '> uplink ............................. streamlit.app',
+      '> status ............................. LIVE',
+    ],
+  },
+  {
     id: 'point-of-sale-resto',
     title: 'POINT OF SALE RESTO',
     tagline: 'E-commerce / POS restaurant demo',
@@ -201,33 +228,6 @@ export const PROJECTS = [
       '> inbox / threads .................. READY',
       '> path ............................. /demo/messaging',
       '> status ........................... LIVE',
-    ],
-  },
-  {
-    id: 'finsight-ai',
-    title: 'FINSIGHT-AI',
-    tagline: 'Financial PDF agentic RAG with citations',
-    year: '2026',
-    role: 'Solo Build',
-    tags: ['Streamlit', 'LangGraph', 'Gemini', 'RAG'],
-    accent: '#E5FF00',
-    color: 'yellow',
-    description:
-      'Agentic RAG over up to four 10-K style PDFs: LangGraph tools, Chroma retrieval, strict inline citations, sidebar PDF viewer with page jump and text highlight on cite.',
-    highlights: [
-      'Gemini flash-lite + embeddings on free tier',
-      'Background multi-PDF indexing with live status',
-      'Citation 🔍 opens PDF viewer with highlighted spans',
-      'Live on Streamlit Community Cloud',
-    ],
-    url: 'https://finsight-aigit-nrpj8vbrx44g9s6fofv6sv.streamlit.app/',
-    screen: [
-      '> boot://finsight-ai/rag.session',
-      '> chroma index ....................... [ok]',
-      '> langgraph tools .................... search | calc',
-      '> citations .......................... STRICT',
-      '> uplink ............................. streamlit.app',
-      '> status ............................. LIVE',
     ],
   },
 ];
