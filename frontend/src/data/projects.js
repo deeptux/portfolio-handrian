@@ -1,5 +1,7 @@
 // Cyberpunk placeholder project catalogue. Edit values here to change what
 // renders in the projects list panel and the terminal-deck screen preview.
+//
+// NOTE: Production handrian.space catalogue lives in data2.js (imported by the app).
 
 export const PROJECTS = [
   {

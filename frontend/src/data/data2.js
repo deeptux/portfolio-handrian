@@ -203,6 +203,33 @@ export const PROJECTS = [
       '> status ........................... LIVE',
     ],
   },
+  {
+    id: 'finsight-ai',
+    title: 'FINSIGHT-AI',
+    tagline: 'Financial PDF agentic RAG with citations',
+    year: '2026',
+    role: 'Solo Build',
+    tags: ['Streamlit', 'LangGraph', 'Gemini', 'RAG'],
+    accent: '#E5FF00',
+    color: 'yellow',
+    description:
+      'Agentic RAG over up to four 10-K style PDFs: LangGraph tools, Chroma retrieval, strict inline citations, sidebar PDF viewer with page jump and text highlight on cite.',
+    highlights: [
+      'Gemini flash-lite + embeddings on free tier',
+      'Background multi-PDF indexing with live status',
+      'Citation 🔍 opens PDF viewer with highlighted spans',
+      'Live on Streamlit Community Cloud',
+    ],
+    url: 'https://finsight-aigit-nrpj8vbrx44g9s6fofv6sv.streamlit.app/',
+    screen: [
+      '> boot://finsight-ai/rag.session',
+      '> chroma index ....................... [ok]',
+      '> langgraph tools .................... search | calc',
+      '> citations .......................... STRICT',
+      '> uplink ............................. streamlit.app',
+      '> status ............................. LIVE',
+    ],
+  },
 ];
 
 export const IDLE_SCREEN = [
@@ -217,13 +244,13 @@ export const ABOUT_CONTENT = {
   greeting: "Hey!!! I'm Handrian.",
   role: 'Full-Stack Engineer · Creative Technologist',
   bio: [
-    'I build production web apps & immersive interfaces, demos for POS, operations, HR, finance, and messaging live under handrian.space/demo.',
+    'I build production web apps & immersive interfaces — POS, operations, HR, finance, messaging under handrian.space/demo, plus agentic RAG (FinSight-Ai) on Streamlit Cloud.',
     'Available for select engagements. Reach out if you want a walkthrough of any of the live demos.',
   ],
   stats: [
     { label: 'live demos', value: String(PROJECTS.length) },
-    { label: 'domains shipped', value: 'POS · FMS · HR · Fin' },
-    { label: 'stack focus', value: 'Next · React · 3D' },
+    { label: 'domains shipped', value: 'POS · FMS · HR · Fin · RAG' },
+    { label: 'stack focus', value: 'Next · React · 3D · AI' },
     { label: 'uptime mindset', value: 'ship + polish' },
   ],
   contact: 'hello@handrian.space',

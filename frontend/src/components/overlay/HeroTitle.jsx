@@ -22,7 +22,7 @@ export default function HeroTitle() {
         {/* Small tag */}
         <div className="pill px-3 md:px-4 py-1.5 mb-4 md:mb-5 pointer-events-auto max-w-full">
           <span className="font-mono text-[9px] md:text-[10px] tracking-[0.28em] md:tracking-[0.3em] text-[#00f0ff] text-glow-cyan whitespace-nowrap">
-            //  HANDRIAN . SPACE  //  ONLINE
+            //  HANDRIAN . SPACE  //  BUILD 3.11.24  //  ONLINE
           </span>
         </div>
 
@@ -41,8 +41,8 @@ export default function HeroTitle() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#ff0055] animate-pulse flex-shrink-0" />
           <span className="font-mono text-[10px] md:text-xs tracking-[0.16em] md:tracking-[0.22em] text-[#E0E0FF]/85 uppercase text-center">
-            <span className="hidden sm:inline">Creative Technologist · Solutions Architect · Full-Stack/Software Dev</span>
-            <span className="sm:hidden">Creative Technologist · Full-Stack/Software Dev</span>
+            <span className="hidden sm:inline">Creative Technologist · Shader-Native · Interface Architect</span>
+            <span className="sm:hidden">Creative Technologist · Shader-Native</span>
           </span>
         </div>
       </div>
