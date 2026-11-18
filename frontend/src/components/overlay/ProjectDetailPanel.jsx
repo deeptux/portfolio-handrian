@@ -33,7 +33,7 @@ export default function ProjectDetailPanel() {
     return (
       <div
         ref={rootRef}
-        className="fixed inset-0 z-40"
+        className="fixed inset-0 z-40 pointer-events-none"
         aria-hidden
       />
     );
@@ -42,7 +42,7 @@ export default function ProjectDetailPanel() {
   return (
     <div
       ref={rootRef}
-      className="fixed inset-0 z-40 flex"
+      className={`fixed inset-0 z-40 flex ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       data-testid={PROJECT_DETAIL.root}
       aria-hidden={!isOpen}
     >

@@ -45,7 +45,9 @@ export default function AboutPanel() {
     <aside
       ref={rootRef}
       data-testid={ABOUT_PANEL.root}
-      className="fixed z-40 pointer-events-auto left-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[540px] lg:w-[42vw]"
+      className={`fixed z-40 left-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[540px] lg:w-[42vw] ${
+        isOpen ? 'pointer-events-auto' : 'pointer-events-none'
+      }`}
       aria-label="About Handrian"
       aria-hidden={!isOpen}
     >
@@ -81,7 +83,7 @@ export default function AboutPanel() {
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto px-6 md:px-8 pb-6 md:pb-8" data-scrollable="true">
+        <div className="flex-1 overflow-y-auto overscroll-contain px-6 md:px-8 pb-6 md:pb-8" data-scrollable="true">
           <div className="font-mono text-xs tracking-[0.22em] uppercase text-[#00f0ff]">
             {ABOUT_CONTENT.role}
           </div>

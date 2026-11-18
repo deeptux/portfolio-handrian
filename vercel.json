@@ -1,77 +1,80 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "rewrites": [
-      {
-        "source": "/demo/point-of-sale-resto",
-        "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto"
-      },
-      {
-        "source": "/demo/point-of-sale-resto/:match*",
-        "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto/:match*"
-      },  
-      {
-        "source": "/demo/fms",
-        "destination": "https://webapp-fms.vercel.app/demo/fms"
-      },
-      {
-        "source": "/demo/fms/:match*",
-        "destination": "https://webapp-fms.vercel.app/demo/fms/:match*"
-      },
-      {
-        "source": "/demo/phmc-privilege-admin",
-        "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin"
-      },
-      {
-        "source": "/demo/phmc-privilege-admin/:match*",
-        "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin/:match*"
-      },
-      {
-        "source": "/demo/production-order-planner",
-        "destination": "https://apptest-production-order-planner.vercel.app/demo/production-order-planner"
-      },
-      {
-        "source": "/demo/production-order-planner/:match*",
-        "destination": "https://apptest-production-order-planner.vercel.app/demo/production-order-planner/:match*"
-      },
-      {
-        "source": "/demo/b2b-ecommerce",
-        "destination": "https://apptest-zagu-ecommerce.vercel.app/demo/b2b-ecommerce"
-      },
-      {
-        "source": "/demo/b2b-ecommerce/:match*",
-        "destination": "https://apptest-zagu-ecommerce.vercel.app/demo/b2b-ecommerce/:match*"
-      },
-      {
-        "source": "/demo/hris",
-        "destination": "https://deeptux.github.io/apptest-hris/"
-      },
-      {
-        "source": "/demo/hris/",
-        "destination": "https://deeptux.github.io/apptest-hris/"
-      },
-      {
-        "source": "/demo/hris/:path*",
-        "destination": "https://deeptux.github.io/apptest-hris/:path*"
-      },
-      {
-        "source": "/demo/financial-reporting",
-        "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting"
-      },
-      {
-        "source": "/demo/financial-reporting/:match*",
-        "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting/:match*"
-      },
-      {
-        "source": "/demo/messaging",
-        "destination": "https://apptest-messaging-dev.web.app/demo/messaging"
-      },
-      {
-        "source": "/demo/messaging/",
-        "destination": "https://apptest-messaging-dev.web.app/demo/messaging/"
-      },
-      {
-        "source": "/demo/messaging/:path*",
-        "destination": "https://apptest-messaging-dev.web.app/demo/messaging/:path*"
-      }
-    ]
-  }
+  "installCommand": "cd frontend && yarn install",
+  "buildCommand": "cd frontend && yarn build",
+  "outputDirectory": "frontend/build",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/demo/point-of-sale-resto",
+      "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto"
+    },
+    {
+      "source": "/demo/point-of-sale-resto/:match*",
+      "destination": "https://apptest-ecommerce.vercel.app/demo/point-of-sale-resto/:match*"
+    },
+    {
+      "source": "/demo/fms",
+      "destination": "https://webapp-fms.vercel.app/demo/fms"
+    },
+    {
+      "source": "/demo/fms/:match*",
+      "destination": "https://webapp-fms.vercel.app/demo/fms/:match*"
+    },
+    {
+      "source": "/demo/phmc-privilege-admin",
+      "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin"
+    },
+    {
+      "source": "/demo/phmc-privilege-admin/:match*",
+      "destination": "https://phmc-loyalty-admin-demo-prototype.vercel.app/demo/phmc-privilege-admin/:match*"
+    },
+    {
+      "source": "/demo/production-order-planner",
+      "destination": "https://apptest-production-order-planner.vercel.app/demo/production-order-planner"
+    },
+    {
+      "source": "/demo/production-order-planner/:match*",
+      "destination": "https://apptest-production-order-planner.vercel.app/demo/production-order-planner/:match*"
+    },
+    {
+      "source": "/demo/b2b-ecommerce",
+      "destination": "https://apptest-zagu-ecommerce.vercel.app/demo/b2b-ecommerce"
+    },
+    {
+      "source": "/demo/b2b-ecommerce/:match*",
+      "destination": "https://apptest-zagu-ecommerce.vercel.app/demo/b2b-ecommerce/:match*"
+    },
+    {
+      "source": "/demo/hris",
+      "destination": "https://deeptux.github.io/apptest-hris/"
+    },
+    {
+      "source": "/demo/hris/",
+      "destination": "https://deeptux.github.io/apptest-hris/"
+    },
+    {
+      "source": "/demo/hris/:path*",
+      "destination": "https://deeptux.github.io/apptest-hris/:path*"
+    },
+    {
+      "source": "/demo/financial-reporting",
+      "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting"
+    },
+    {
+      "source": "/demo/financial-reporting/:match*",
+      "destination": "https://popic-projection-app-poc.vercel.app/demo/financial-reporting/:match*"
+    },
+    {
+      "source": "/demo/messaging",
+      "destination": "https://apptest-messaging-dev.web.app/demo/messaging"
+    },
+    {
+      "source": "/demo/messaging/",
+      "destination": "https://apptest-messaging-dev.web.app/demo/messaging/"
+    },
+    {
+      "source": "/demo/messaging/:path*",
+      "destination": "https://apptest-messaging-dev.web.app/demo/messaging/:path*"
+    }
+  ]
+}

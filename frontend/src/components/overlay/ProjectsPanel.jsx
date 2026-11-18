@@ -52,7 +52,9 @@ export default function ProjectsPanel() {
     <aside
       ref={rootRef}
       data-testid={PROJECTS_PANEL.root}
-      className="fixed z-40 pointer-events-auto right-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[520px] lg:w-[38vw]"
+      className={`fixed z-40 right-0 bottom-0 md:top-0 w-full h-[85vh] md:h-screen md:w-[520px] lg:w-[38vw] ${
+        isOpen ? 'pointer-events-auto' : 'pointer-events-none'
+      }`}
       aria-label="Selected projects"
       aria-hidden={!isOpen}
     >
@@ -86,7 +88,7 @@ export default function ProjectsPanel() {
 
         {/* List */}
         <div
-          className="flex-1 overflow-y-auto px-6 md:px-8 py-3 md:py-4 space-y-3"
+          className="flex-1 overflow-y-auto overscroll-contain px-6 md:px-8 py-3 md:py-4 space-y-3"
           data-testid={PROJECTS_PANEL.list}
           data-scrollable="true"
         >

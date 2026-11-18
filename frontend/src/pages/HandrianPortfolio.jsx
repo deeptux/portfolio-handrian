@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Lenis from 'lenis';
 import SceneCanvas from '@/components/scene/SceneCanvas';
 import NavHeader from '@/components/overlay/NavHeader';
 import HeroTitle from '@/components/overlay/HeroTitle';
@@ -130,30 +129,6 @@ function Layout() {
 
 export default function HandrianPortfolio() {
   const [booted, setBooted] = useState(false);
-
-  // Wire Lenis for panel content smooth scrolling — Lenis on window level so
-  // internal overflow-y-auto containers benefit uniformly.
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 1,
-      smoothWheel: true,
-      // We disable Lenis on the body since body has overflow-hidden, but keep
-      // the instance for future scroll-triggered animations.
-    });
-
-    let raf;
-    function tick(time) {
-      lenis.raf(time);
-      raf = requestAnimationFrame(tick);
-    }
-    raf = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(raf);
-      lenis.destroy();
-    };
-  }, []);
 
   return (
     <SceneStateProvider>
